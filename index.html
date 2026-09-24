@@ -1,0 +1,1903 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AuurrrDayy'sss</title>
+
+<style>
+
+/* =====================================================
+   FONT
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    font-family: 'Quicksand', sans-serif;
+
+    overflow: hidden;
+
+    color: #3d3a4f;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(143, 255, 190, .35),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(188, 157, 255, .35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(112, 205, 255, .30),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dffff0,
+            #e9ddff,
+            #dff2ff
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND CIRCLES
+===================================================== */
+
+.bg-circle {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    opacity: .45;
+
+    filter: blur(5px);
+}
+
+.circle1 {
+
+    width: 180px;
+    height: 180px;
+
+    background: #91efb5;
+
+    left: -70px;
+    top: -70px;
+}
+
+.circle2 {
+
+    width: 160px;
+    height: 160px;
+
+    background: #c7a4ff;
+
+    right: -65px;
+    top: 70px;
+}
+
+.circle3 {
+
+    width: 190px;
+    height: 190px;
+
+    background: #8ddcff;
+
+    bottom: -100px;
+    left: 20%;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateX(35px)
+        scale(.97);
+
+    transition:
+        opacity .55s ease,
+        transform .55s ease,
+        visibility .55s ease;
+}
+
+.page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.phone {
+
+    position: relative;
+
+    width: min(390px, 94vw);
+
+    height: min(760px, 93vh);
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.84),
+            rgba(237,225,255,.84)
+        );
+
+    border:
+
+        2px solid
+        rgba(255,255,255,.85);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(75,60,120,.22),
+
+        inset 0 0 35px
+        rgba(255,255,255,.45);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    animation:
+        sparkleAnimation
+        2.3s
+        infinite
+        ease-in-out;
+}
+
+.s1 {
+
+    top: 8%;
+    left: 10%;
+}
+
+.s2 {
+
+    top: 23%;
+    right: 10%;
+
+    animation-delay: .5s;
+}
+
+.s3 {
+
+    bottom: 18%;
+    left: 12%;
+
+    animation-delay: 1s;
+}
+
+.s4 {
+
+    bottom: 8%;
+    right: 15%;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes sparkleAnimation {
+
+    0%,
+    100% {
+
+        opacity: .25;
+
+        transform:
+            scale(.7)
+            rotate(0deg);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.35)
+            rotate(15deg);
+    }
+}
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+.page1-content {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        25px
+        25px
+        35px;
+}
+
+
+/* =====================================================
+   CHARACTER TOP
+===================================================== */
+
+.character-top {
+
+    width: 155px;
+
+    max-width: 43vw;
+
+    height: 190px;
+
+    object-fit: contain;
+
+    margin-bottom: 5px;
+
+    filter:
+
+        drop-shadow(
+            0 12px 15px
+            rgba(50,40,80,.20)
+        );
+
+    animation:
+
+        characterFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes characterFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-9px);
+    }
+}
+
+
+/* =====================================================
+   PAGE 1 TEXT
+===================================================== */
+
+.small-title {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #71698d;
+
+    margin-bottom: 12px;
+}
+
+
+.page1-title {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    color: #6375bf;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        2px 2px 0
+        rgba(221,210,255,.8);
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.envelope {
+
+    width: 215px;
+
+    max-width: 65vw;
+
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    filter:
+
+        drop-shadow(
+            0 15px 20px
+            rgba(70,60,120,.25)
+        );
+
+    animation:
+
+        envelopeFloat
+        3s
+        ease-in-out
+        infinite;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.envelope:hover {
+
+    transform:
+        scale(1.06);
+}
+
+
+.envelope:active {
+
+    transform:
+        scale(.93);
+}
+
+
+@keyframes envelopeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(-1deg);
+    }
+}
+
+
+/* =====================================================
+   OPEN TEXT
+===================================================== */
+
+.open-text {
+
+    margin-top: 18px;
+
+    padding:
+        10px
+        20px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color: #625b82;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(80,70,120,.12);
+
+    animation:
+        buttonPulse
+        2s
+        infinite;
+}
+
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.04);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2
+===================================================== */
+
+.page2-content {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        25px;
+}
+
+
+/* =====================================================
+   PAGE 2 CHARACTER
+===================================================== */
+
+.character-page2 {
+
+    width: 125px;
+
+    height: 150px;
+
+    object-fit: contain;
+
+    margin-bottom: 8px;
+
+    filter:
+
+        drop-shadow(
+            0 10px 14px
+            rgba(50,40,80,.18)
+        );
+
+    animation:
+
+        characterFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   PAGE 2 HEADER
+===================================================== */
+
+.header-small {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #73739c;
+
+    margin-bottom: 7px;
+}
+
+
+.felices {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size:
+        clamp(
+            28px,
+            8vw,
+            37px
+        );
+
+    line-height: 1.3;
+
+    color: #6878c7;
+
+    text-shadow:
+
+        2px 2px 0
+        #e0d4ff;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake-area {
+
+    position: relative;
+
+    width: 260px;
+
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+
+.cake {
+
+    font-size: 135px;
+
+    filter:
+
+        drop-shadow(
+            0 15px 15px
+            rgba(70,60,110,.20)
+        );
+
+    animation:
+
+        cakeFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+.candle {
+
+    position: absolute;
+
+    top: 10px;
+
+    font-size: 48px;
+
+    z-index: 2;
+
+    animation:
+
+        flameAnimation
+        1s
+        infinite
+        alternate;
+}
+
+
+@keyframes flameAnimation {
+
+    from {
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            rotate(4deg)
+            scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2 SUBTITLE
+===================================================== */
+
+.page2-subtitle {
+
+    max-width: 300px;
+
+    padding:
+        13px
+        18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    color: #66627a;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(80,70,120,.08);
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-btn {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        12px
+        24px;
+
+    border-radius: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #8195df,
+            #a487d7
+        );
+
+    color: white;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 9px 20px
+        rgba(90,80,150,.22);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.next-btn:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+}
+
+
+.next-btn:active {
+
+    transform:
+        translateX(-50%)
+        scale(.94);
+}
+
+
+/* =====================================================
+   PAGE 3
+===================================================== */
+
+.page3-content {
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+        28px
+        22px
+        35px;
+
+    overflow-y: auto;
+
+    text-align: left;
+}
+
+
+.page3-content::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+.page3-content::-webkit-scrollbar-thumb {
+
+    background:
+        #b7a7e8;
+
+    border-radius:
+        20px;
+}
+
+
+/* =====================================================
+   PAGE 3 CHARACTER
+===================================================== */
+
+.character-page3 {
+
+    display: block;
+
+    width: 105px;
+
+    height: 120px;
+
+    object-fit: contain;
+
+    margin:
+        0
+        auto
+        4px;
+
+    filter:
+
+        drop-shadow(
+            0 9px 12px
+            rgba(60,50,100,.18)
+        );
+
+    animation:
+
+        characterFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MESSAGE TITLE
+===================================================== */
+
+.message-title {
+
+    text-align: center;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 28px;
+
+    color: #6576bd;
+
+    margin-bottom: 5px;
+}
+
+
+.message-subtitle {
+
+    text-align: center;
+
+    color: #817b9a;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MESSAGE CARD
+===================================================== */
+
+.message-card {
+
+    position: relative;
+
+    padding:
+        22px
+        20px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid
+        rgba(255,255,255,.85);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(75,65,110,.13);
+
+    color: #4c4a5e;
+
+    font-size: 13.5px;
+
+    line-height: 1.8;
+}
+
+
+.message-card p {
+
+    margin-bottom: 16px;
+}
+
+
+.highlight {
+
+    color: #6575bd;
+
+    font-weight: 700;
+}
+
+
+.emoji-line {
+
+    text-align: center;
+
+    font-size: 23px;
+
+    margin:
+        5px
+        0
+        18px;
+}
+
+
+.thanks {
+
+    text-align: center;
+
+    color: #786aa5;
+
+    font-weight: 700;
+
+    font-size: 15px;
+}
+
+
+.message-character {
+
+    display: block;
+
+    width: 105px;
+
+    height: 115px;
+
+    object-fit: contain;
+
+    margin:
+        10px
+        auto
+        0;
+
+    filter:
+
+        drop-shadow(
+            0 8px 12px
+            rgba(60,50,100,.15)
+        );
+}
+
+
+
+/* =====================================================
+   PAGE 4 - LITTLE REMINDER
+===================================================== */
+
+.page4-content {
+    width: 100%;
+    height: 100%;
+    padding: 28px 22px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.character-page4 {
+    display: block;
+
+    width: 145px;
+    height: 175px;
+
+    object-fit: contain;
+
+    margin: 0 auto 8px;
+
+    filter:
+        drop-shadow(
+            0 10px 14px
+            rgba(60,50,100,.20)
+        );
+
+    animation:
+        characterFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+.reminder-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #73739c;
+
+    margin-bottom: 7px;
+}
+
+.reminder-title {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 30px;
+    line-height: 1.3;
+
+    color: #6878c7;
+
+    text-shadow:
+        2px 2px 0 #e0d4ff;
+
+    margin-bottom: 20px;
+}
+
+.reminder-card {
+    width: 100%;
+    max-width: 330px;
+
+    padding: 25px 21px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    border:
+        1px solid
+        rgba(255,255,255,.90);
+
+    box-shadow:
+        0 12px 30px
+        rgba(75,65,110,.14);
+
+    color: #4c4a5e;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+.reminder-card p {
+    margin-bottom: 16px;
+}
+
+.reminder-card .strong {
+    color: #6575bd;
+    font-weight: 700;
+}
+
+.reminder-heart {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.reminder-bottom {
+    color: #786aa5;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+@media (max-width: 420px) {
+
+    .character-page4 {
+        width: 125px;
+        height: 150px;
+    }
+
+    .reminder-title {
+        font-size: 28px;
+    }
+
+    .reminder-card {
+        font-size: 13px;
+        padding: 22px 18px;
+    }
+}
+
+@media (max-height: 650px) {
+
+    .character-page4 {
+        width: 100px;
+        height: 115px;
+    }
+
+    .reminder-title {
+        font-size: 25px;
+        margin-bottom: 12px;
+    }
+
+    .reminder-card {
+        padding: 18px 16px;
+        line-height: 1.7;
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .phone {
+
+        width: 94vw;
+
+        height: 92vh;
+
+        border-radius: 28px;
+    }
+
+
+    .character-top {
+
+        width: 135px;
+
+        height: 165px;
+    }
+
+
+    .page1-title {
+
+        font-size: 23px;
+    }
+
+
+    .envelope {
+
+        width: 195px;
+    }
+
+
+    .character-page2 {
+
+        width: 110px;
+
+        height: 130px;
+    }
+
+
+    .felices {
+
+        font-size: 30px;
+    }
+
+
+    .cake {
+
+        font-size: 120px;
+    }
+
+
+    .cake-area {
+
+        height: 205px;
+    }
+
+
+    .message-card {
+
+        font-size: 13px;
+
+        padding:
+            20px
+            18px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media (max-height: 650px) {
+
+    .character-top {
+
+        width: 110px;
+
+        height: 125px;
+    }
+
+
+    .envelope {
+
+        width: 165px;
+    }
+
+
+    .page1-title {
+
+        font-size: 21px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .character-page2 {
+
+        width: 90px;
+
+        height: 100px;
+    }
+
+
+    .felices {
+
+        font-size: 27px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .cake-area {
+
+        height: 170px;
+    }
+
+
+    .cake {
+
+        font-size: 100px;
+    }
+
+
+    .character-page3 {
+
+        width: 75px;
+
+        height: 85px;
+    }
+}
+
+
+/* =====================================================
+   PAGE 4 - FINAL REMINDER
+===================================================== */
+
+.page4-content {
+    width: 100%;
+    height: 100%;
+    padding: 24px 20px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow-y: auto;
+}
+
+.page4-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.page4-content::-webkit-scrollbar-thumb {
+    background: #b7a7e8;
+    border-radius: 20px;
+}
+
+.page3-next {
+    z-index: 10;
+}
+
+/* ==============================
+   CHARACTER PAGE 3
+============================== */
+
+.character-page3 {
+    display: block;
+
+    width: 150px;
+    height: 165px;
+
+    object-fit: contain;
+
+    margin: 0 auto 6px;
+
+    filter:
+        drop-shadow(
+            0 10px 14px
+            rgba(60, 50, 100, .20)
+        );
+
+    animation:
+        characterFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
+<div class="bg-circle circle3"></div>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section
+    class="page active"
+    id="page1"
+>
+
+    <div class="phone">
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+
+
+        <div class="page1-content">
+
+            <!-- =========================================
+                 TITLE
+            ========================================== -->
+
+            <div class="small-title">
+                A LITTLE SURPRISE
+            </div>
+
+
+            <div class="page1-title">
+                Something from me for you 💌
+            </div>
+
+
+            <!-- =========================================
+                 ENVELOPE
+            ========================================== -->
+
+            <img
+                src="envelope.png"
+                class="envelope"
+                id="envelope"
+                alt="Envelope"
+            >
+
+
+            <div class="open-text">
+                Tap the envelope 💌
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+<section
+    class="page"
+    id="page2"
+>
+
+    <div class="phone">
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+
+
+        <div class="page2-content">
+
+
+            <!-- =========================================
+                 CHARACTER
+            ========================================== -->
+
+            <img
+                src="character.png"
+                class="character-page2"
+                alt="Anime Character"
+            >
+
+
+            <!-- =========================================
+                 HEADER
+            ========================================== -->
+
+            <div class="header-small">
+                TODAY IS YOUR DAY
+            </div>
+
+
+            <h1 class="felices">
+                Felices Celebraciones
+            </h1>
+
+
+            <!-- =========================================
+                 CAKE
+            ========================================== -->
+
+            <div class="cake-area">
+
+                <div class="candle">
+                    🕯️
+                </div>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 SUBTITLE
+            ========================================== -->
+
+            <div class="page2-subtitle">
+
+                One more year,
+                one more story,
+                and hopefully lots of
+                good things waiting for you 💜
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================================
+             BUTTON
+        ========================================== -->
+
+        <button
+            class="next-btn"
+            onclick="goToPage(3)"
+        >
+            Buka Pesannya 💌
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 3
+===================================================== -->
+
+<section
+    class="page"
+    id="page3"
+>
+
+    <div class="phone">
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+
+
+        <div class="page3-content">
+
+
+            <!-- =========================================
+                 CHARACTER
+            ========================================== -->
+
+            <img
+                src="character2.png"
+                class="character-page3"
+                alt="Anime Character"
+            >
+
+
+            <!-- =========================================
+                 TITLE
+            ========================================== -->
+
+            <h1 class="message-title">
+                Happy Birthday!
+            </h1>
+
+
+            <div class="message-subtitle">
+                a little message from me for u 💜
+            </div>
+
+
+            <!-- =========================================
+                 MESSAGE
+            ========================================== -->
+
+            <div class="message-card">
+
+
+                <p>
+
+                    <span class="highlight">
+                        Happy birthday for u bestie..
+                    </span>
+
+                    <br>
+
+                    today is your day ✨
+
+                </p>
+
+
+                <p>
+
+                    its a little celebrate for u from me,
+                    walau pun tadi sempat lupa kalu u ultah
+                    hehehe 👉🏻👈🏻
+
+                </p>
+
+
+                <p>
+
+                    hope u always be happy,
+                    jangan terlalu stress yaa,
+                    always being your self,
+                    pajang umurr.
+
+                </p>
+
+
+                <p>
+
+                    jujur gk tau mau nulis apa lagiii.
+                    sekian terima kasihh.
+                    bye bye 👋🏻👋🏻
+
+                </p>
+
+
+                <p class="thanks">
+
+                    jangan lupa traktirannya 😋
+
+                </p>
+
+
+                <p
+                    style="
+                    text-align:center;
+                    margin-bottom:10px;
+                    "
+                >
+
+                  
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+        <!-- BUTTON KE PAGE 4 -->
+        <button
+            class="next-btn page3-next"
+            onclick="goToPage(4)"
+        >
+            Little Reminder 💜
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =====================================================
+     PAGE 4 - LITTLE REMINDER
+===================================================== -->
+
+<section
+    class="page"
+    id="page4"
+>
+
+    <div class="phone">
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+
+        <div class="page4-content">
+
+            <!-- KARAKTER DI ATAS -->
+            <img
+                src="character3.png"
+                class="character-page4"
+                alt="Anime Character"
+            >
+
+            <div class="reminder-label">
+                A LITTLE REMINDER
+            </div>
+
+            <div class="reminder-card">
+
+
+                <p>
+                    jangan lupa selalu
+                    <span class="strong">
+                        berterimakasih sama diri u sendiri
+                    </span>
+                    yaa.
+                </p>
+
+                <p>
+                    karna kan yang selalu berjuang,
+                    nemenin semuanya,
+                    dan tetap bertahan sampai sekarang
+                    itu <span class="strong">diri u sendiri</span>.
+                </p>
+
+                <p>
+                    jadi gapapa kok kalau sesekali
+                    mau capek, mau cerita,
+                    atau mau <span class="strong">sambat di SW</span> 😭
+                </p>
+
+                <p class="reminder-bottom">
+                    jangan terlalu keras sama diri sendiri yaa.
+                    u've done enough today 🫶🏻
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* ==============================
+   BACKGROUND MUSIC
+============================== */
+
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.volume = 0.45;
+
+function playMusic() {
+    bgMusic.play().catch(() => {
+        // Browser memblokir autoplay sampai ada interaksi pengguna
+    });
+}
+
+/* Coba autoplay saat halaman dibuka */
+window.addEventListener("load", () => {
+    playMusic();
+});
+
+/* Musik mulai setelah user pertama kali menyentuh web */
+document.addEventListener("click", () => {
+    playMusic();
+}, { once: true });
+
+document.addEventListener("touchstart", () => {
+    playMusic();
+}, { once: true });
+
+
+/* =====================================================
+   CURRENT PAGE
+===================================================== */
+
+let currentPage = 1;
+
+
+/* =====================================================
+   GO TO PAGE
+===================================================== */
+
+function goToPage(pageNumber) {
+
+
+    const currentPageElement =
+        document.getElementById(
+            "page" + currentPage
+        );
+
+
+    const nextPageElement =
+        document.getElementById(
+            "page" + pageNumber
+        );
+
+
+    if (!nextPageElement) {
+
+        return;
+
+    }
+
+
+    currentPageElement.classList.remove(
+        "active"
+    );
+
+
+    setTimeout(function() {
+
+        nextPageElement.classList.add(
+            "active"
+        );
+
+        currentPage =
+            pageNumber;
+
+    }, 80);
+
+}
+
+
+
+/* =====================================================
+   ENVELOPE CLICK
+===================================================== */
+
+const envelope =
+    document.getElementById(
+        "envelope"
+    );
+
+
+envelope.addEventListener(
+    "click",
+    function() {
+
+
+        envelope.style.animation =
+            "none";
+
+
+        envelope.style.transform =
+            "scale(1.08)";
+
+
+        setTimeout(function() {
+
+            goToPage(2);
+
+        }, 300);
+
+    }
+);
+
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            if (
+                currentPage < 4
+            ) {
+
+                goToPage(
+                    currentPage + 1
+                );
+
+            }
+
+        }
+
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            if (
+                currentPage > 1
+            ) {
+
+                goToPage(
+                    currentPage - 1
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>
